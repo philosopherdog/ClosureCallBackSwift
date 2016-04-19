@@ -10,10 +10,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var completionHandler:((data: String)->(Void))?
+    
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func saveTapped(sender: UIBarButtonItem) {
         let text = self.textField.text
-        
+        self.completionHandler!(data: text!)
     }
 }
